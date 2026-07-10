@@ -150,7 +150,7 @@ import { defineFigmaMainConfig } from 'figma-primitives/vite'
 export default defineFigmaMainConfig('src/code.ts')
 ```
 
-Build the UI into `dist/ui`:
+Build the UI as `dist/ui.html`:
 
 ```ts
 // vite.config.ts
@@ -158,6 +158,33 @@ import { defineFigmaUiConfig } from 'figma-primitives/vite'
 
 export default defineFigmaUiConfig()
 ```
+
+Point the Figma manifest at those exact outputs:
+
+```json
+{
+  "name": "Figma Synth",
+  "id": "figma-synth-development",
+  "api": "1.0.0",
+  "main": "dist/code.js",
+  "ui": "dist/ui.html",
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page"
+}
+```
+
+Then let `figma-primitives` run both Vite builds from the consuming plugin:
+
+```json
+{
+  "scripts": {
+    "build": "figma-primitives build",
+    "dev": "figma-primitives dev"
+  }
+}
+```
+
+`npm run dev` watches the plugin's main and UI source trees. Every change rebuilds `dist/code.js` or `dist/ui.html`, so reopening or rerunning the development plugin in Figma uses the latest output.
 
 ## Development
 
@@ -169,7 +196,7 @@ npm run build
 
 - `npm run check` runs TypeScript and the test suite.
 - `npm run build` creates ESM JavaScript and type declarations in `dist`.
-- `npm run dev` rebuilds the package in watch mode.
+- `npm run dev` watches source files and rebuilds both JavaScript and type declarations in `dist`.
 
 ## Principles
 

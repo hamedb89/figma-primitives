@@ -5,5 +5,18 @@ export function defineFigmaMainConfig(entry = 'src/code.ts'): UserConfig {
 }
 
 export function defineFigmaUiConfig(config: UserConfig = {}): UserConfig {
-  return defineConfig({ ...config, build: { ...config.build, emptyOutDir: false, outDir: 'dist/ui' } })
+  return defineConfig({
+    ...config,
+    build: { ...config.build, emptyOutDir: false, outDir: 'dist' },
+    plugins: [
+      ...(config.plugins ?? []),
+      {
+        name: 'figma-ui-html',
+        generateBundle(_options, bundle) {
+          const html = Object.values(bundle).find((output) => output.type === 'asset' && output.fileName.endsWith('.html'))
+          if (html) html.fileName = 'ui.html'
+        },
+      },
+    ],
+  })
 }
