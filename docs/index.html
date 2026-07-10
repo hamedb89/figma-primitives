@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Typed runtime, state, networking, selection, and UI primitives for Figma plugins." />
+    <meta name="theme-color" content="#0b0b0f" />
+    <title>figma-primitives — typed building blocks for Figma plugins</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="nav wrap">
+      <a class="brand" href="#top" aria-label="figma-primitives home">
+        <span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span>figma-primitives</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#primitives">Primitives</a>
+        <a href="#quickstart">Quick start</a>
+        <a class="nav-github" href="../" data-repo-link>GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero wrap">
+        <div class="eyebrow"><span></span> TypeScript · React · Vite</div>
+        <h1>The sharp edges of Figma plugins, <em>handled.</em></h1>
+        <p class="lede">A small set of typed primitives for messaging, async tasks, selections, networking, and plugin UI. Product decisions stay yours.</p>
+        <div class="actions">
+          <a class="button primary" href="#quickstart">Get started <span aria-hidden="true">→</span></a>
+          <button class="button install" type="button" data-copy="npm install figma-primitives"><code>npm install figma-primitives</code><span class="copy-label">Copy</span></button>
+        </div>
+        <div class="hero-card" aria-label="Code example">
+          <div class="code-head"><span><i></i><i></i><i></i></span><span>tasks.ts</span><span>TypeScript</span></div>
+          <pre><code><span class="pink">import</span> { <span class="blue">createTaskEngine</span> } <span class="pink">from</span> <span class="green">'figma-primitives'</span>
+
+<span class="pink">const</span> tasks = <span class="blue">createTaskEngine</span>()
+
+<span class="pink">await</span> tasks.<span class="blue">run</span>(
+  { type: <span class="green">'selection.inspect'</span>, label: <span class="green">'Inspect selection'</span> },
+  <span class="pink">async</span> ({ signal, progress }) => {
+    <span class="blue">progress</span>({ label: <span class="green">'Reading layers'</span> })
+    <span class="pink">return</span> <span class="blue">inspectSelection</span>({ signal })
+  },
+)</code></pre>
+        </div>
+      </section>
+
+      <section class="section wrap" id="primitives">
+        <div class="section-heading">
+          <p>One dependable foundation</p>
+          <h2>Common plugin machinery.<br />No product baggage.</h2>
+        </div>
+        <div class="grid">
+          <article><span class="icon">↔</span><h3>Typed protocol</h3><p>Request and response messaging across the main/UI boundary, driven by one shared command definition.</p><code>createProtocol()</code></article>
+          <article><span class="icon">◷</span><h3>Task ownership</h3><p>Stable ids, progress, cancellation, errors, and a subscribable history for every piece of async work.</p><code>createTaskEngine()</code></article>
+          <article><span class="icon">◇</span><h3>Layer projections</h3><p>Turn Figma-like nodes into serializable trees with bounds, text, hierarchy, and capability flags.</p><code>inspectLayer()</code></article>
+          <article><span class="icon">⌁</span><h3>Selection state</h3><p>A minimal external store with revisions, suitable for vanilla TypeScript or React's subscription model.</p><code>createSelectionStore()</code></article>
+          <article><span class="icon">◎</span><h3>Safe networking</h3><p>JSON requests with timeouts, abort signals, response decoders, structured errors, and logging.</p><code>createNetworkClient()</code></article>
+          <article><span class="icon">△</span><h3>Optional adapters</h3><p>Focused React bindings and reusable Vite configs live in separate, tree-shakeable entry points.</p><code>/react · /vite</code></article>
+        </div>
+      </section>
+
+      <section class="quickstart" id="quickstart">
+        <div class="wrap quick-grid">
+          <div>
+            <p class="kicker">Quick start</p>
+            <h2>Three imports.<br />One clear boundary.</h2>
+            <p>Use the core everywhere. Add React bindings in your UI and Vite helpers in build configuration only when you need them.</p>
+          </div>
+          <div class="steps">
+            <div><b>01</b><span><strong>Install the package</strong><code>npm install figma-primitives</code></span></div>
+            <div><b>02</b><span><strong>Choose an entry point</strong><code>figma-primitives · /react · /vite</code></span></div>
+            <div><b>03</b><span><strong>Keep domain behavior in your app</strong><small>Endpoints, schemas, and product rules remain explicit.</small></span></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wrap">
+      <span>figma-primitives</span>
+      <span>Small pieces. Explicit boundaries.</span>
+      <a href="../LICENSE" data-repo-link="/blob/main/LICENSE">MIT License</a>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>
