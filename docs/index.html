@@ -3,85 +3,122 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Typed runtime, state, networking, selection, and UI primitives for Figma plugins." />
-    <meta name="theme-color" content="#0b0b0f" />
-    <title>figma-primitives — typed building blocks for Figma plugins</title>
+    <meta name="description" content="Typed runtime, React, and networking primitives for building better Figma plugins faster." />
+    <meta name="theme-color" content="#fbfbfe" />
+    <meta property="og:title" content="figma-primitives" />
+    <meta property="og:description" content="The dependable foundation for your next Figma plugin." />
+    <title>figma-primitives — build Figma plugins faster</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <header class="nav wrap">
+    <header class="nav shell">
       <a class="brand" href="#top" aria-label="figma-primitives home">
-        <span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span class="figma-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
         <span>figma-primitives</span>
       </a>
       <nav aria-label="Primary navigation">
-        <a href="#primitives">Primitives</a>
-        <a href="#quickstart">Quick start</a>
-        <a class="nav-github" href="../" data-repo-link>GitHub <span aria-hidden="true">↗</span></a>
+        <a href="#features">Primitives</a>
+        <a href="#how-it-works">How it works</a>
+        <a class="github-link" href="https://github.com/hamedb89/figma-primitives" data-repo-link>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.87c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.64-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.6 9.6 0 0 1 12 6.82a9.6 9.6 0 0 1 2.5.34c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.86V21c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+          GitHub <span aria-hidden="true">↗</span>
+        </a>
       </nav>
     </header>
 
     <main id="top">
-      <section class="hero wrap">
-        <div class="eyebrow"><span></span> TypeScript · React · Vite</div>
-        <h1>The sharp edges of Figma plugins, <em>handled.</em></h1>
-        <p class="lede">A small set of typed primitives for messaging, async tasks, selections, networking, and plugin UI. Product decisions stay yours.</p>
-        <div class="actions">
-          <a class="button primary" href="#quickstart">Get started <span aria-hidden="true">→</span></a>
-          <button class="button install" type="button" data-copy="npm install figma-primitives"><code>npm install figma-primitives</code><span class="copy-label">Copy</span></button>
+      <section class="hero shell">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="sparkle">✦</span> Your Figma plugin starter pack</div>
+          <h1>Build Figma<br />plugins <em>faster.</em></h1>
+          <p>A modern collection of typed primitives and utilities for plugin runtime, UI, and networking.</p>
+          <div class="actions">
+            <a class="button primary" href="#quickstart">Start building <span>→</span></a>
+            <button class="button install" type="button" data-copy="npm install figma-primitives">
+              <code>npm i figma-primitives</code>
+              <span class="copy-icon" aria-label="Copy install command">⧉</span>
+            </button>
+          </div>
+          <div class="proof"><span class="avatars"><i>TS</i><i>R</i><i>V</i></span><span><strong>One small toolkit.</strong><br />All the invisible plumbing.</span></div>
         </div>
-        <div class="hero-card" aria-label="Code example">
-          <div class="code-head"><span><i></i><i></i><i></i></span><span>tasks.ts</span><span>TypeScript</span></div>
-          <pre><code><span class="pink">import</span> { <span class="blue">createTaskEngine</span> } <span class="pink">from</span> <span class="green">'figma-primitives'</span>
 
-<span class="pink">const</span> tasks = <span class="blue">createTaskEngine</span>()
-
-<span class="pink">await</span> tasks.<span class="blue">run</span>(
-  { type: <span class="green">'selection.inspect'</span>, label: <span class="green">'Inspect selection'</span> },
-  <span class="pink">async</span> ({ signal, progress }) => {
-    <span class="blue">progress</span>({ label: <span class="green">'Reading layers'</span> })
-    <span class="pink">return</span> <span class="blue">inspectSelection</span>({ signal })
-  },
-)</code></pre>
+        <div class="hero-art" aria-hidden="true">
+          <span class="orb orb-purple"></span><span class="orb orb-green"></span><span class="orb orb-orange"></span>
+          <div class="plugin-window">
+            <div class="window-bar"><span class="mini-mark">✦</span><b>Primitives</b><span class="window-dots">•••</span></div>
+            <div class="window-body">
+              <div class="selection-chip"><i></i> 3 layers selected</div>
+              <div class="layer"><span class="layer-icon purple">◇</span><b>Hero section</b><small>FRAME</small></div>
+              <div class="layer"><span class="layer-icon blue">T</span><b>Heading</b><small>TEXT</small></div>
+              <div class="layer"><span class="layer-icon green">●</span><b>Primary button</b><small>COMPONENT</small></div>
+              <div class="task"><span><i></i> Inspecting selection</span><b>72%</b><div><i></i></div></div>
+              <div class="window-actions"><span>Cancel</span><strong>Publish components</strong></div>
+            </div>
+          </div>
+          <div class="floating-card card-code"><span>&lt;/&gt;</span><b>Fully typed</b><small>End to end</small></div>
+          <div class="floating-card card-status"><i></i><span><b>Task complete</b><small>12 components published</small></span></div>
+          <div class="dot-field"></div>
         </div>
       </section>
 
-      <section class="section wrap" id="primitives">
-        <div class="section-heading">
-          <p>One dependable foundation</p>
-          <h2>Common plugin machinery.<br />No product baggage.</h2>
-        </div>
-        <div class="grid">
-          <article><span class="icon">↔</span><h3>Typed protocol</h3><p>Request and response messaging across the main/UI boundary, driven by one shared command definition.</p><code>createProtocol()</code></article>
-          <article><span class="icon">◷</span><h3>Task ownership</h3><p>Stable ids, progress, cancellation, errors, and a subscribable history for every piece of async work.</p><code>createTaskEngine()</code></article>
-          <article><span class="icon">◇</span><h3>Layer projections</h3><p>Turn Figma-like nodes into serializable trees with bounds, text, hierarchy, and capability flags.</p><code>inspectLayer()</code></article>
-          <article><span class="icon">⌁</span><h3>Selection state</h3><p>A minimal external store with revisions, suitable for vanilla TypeScript or React's subscription model.</p><code>createSelectionStore()</code></article>
-          <article><span class="icon">◎</span><h3>Safe networking</h3><p>JSON requests with timeouts, abort signals, response decoders, structured errors, and logging.</p><code>createNetworkClient()</code></article>
-          <article><span class="icon">△</span><h3>Optional adapters</h3><p>Focused React bindings and reusable Vite configs live in separate, tree-shakeable entry points.</p><code>/react · /vite</code></article>
+      <section class="trust shell" aria-label="Technology support"><span>BUILT FOR THE MODERN PLUGIN STACK</span><b>TypeScript</b><b>React</b><b>Vite</b><b>Figma API</b></section>
+
+      <section class="features shell" id="features">
+        <div class="section-intro"><span class="kicker">01 / THE TOOLKIT</span><h2>Three layers.<br /><em>One clear foundation.</em></h2><p>Use only what you need. Every entry point is focused, typed, and designed to stay out of your product's way.</p></div>
+        <div class="feature-grid">
+          <article class="feature core">
+            <span class="number">1/3</span><div class="feature-icon">✦</div>
+            <h3>Core<br /><em>primitives.</em></h3><p>Protocols, tasks, layers, selection, errors, and structured logging—without framework baggage.</p>
+            <ul><li>Typed main ↔ UI messaging</li><li>Cancellable task lifecycles</li><li>Serializable layer inspection</li></ul><code>figma-primitives</code><span class="shape"></span>
+          </article>
+          <article class="feature react">
+            <span class="number">2/3</span><div class="feature-icon atom">⚛</div>
+            <h3>Built with<br /><em>React.</em></h3><p>Small, composable bindings that keep your UI predictable, responsive, and easy to maintain.</p>
+            <ul><li>Task and selection hooks</li><li>Provider-based state</li><li>Tabs and layer pickers</li></ul><code>figma-primitives/react</code><span class="shape"></span>
+          </article>
+          <article class="feature network">
+            <span class="number">3/3</span><div class="feature-icon nodes">⌘</div>
+            <h3>Threading &amp;<br /><em>networking.</em></h3><p>Run work in the background and communicate across your plugin without freezing the experience.</p>
+            <ul><li>Abortable JSON requests</li><li>Timeouts and decoders</li><li>Structured errors</li></ul><code>createNetworkClient()</code><span class="shape"></span>
+          </article>
         </div>
       </section>
 
-      <section class="quickstart" id="quickstart">
-        <div class="wrap quick-grid">
-          <div>
-            <p class="kicker">Quick start</p>
-            <h2>Three imports.<br />One clear boundary.</h2>
-            <p>Use the core everywhere. Add React bindings in your UI and Vite helpers in build configuration only when you need them.</p>
-          </div>
-          <div class="steps">
-            <div><b>01</b><span><strong>Install the package</strong><code>npm install figma-primitives</code></span></div>
-            <div><b>02</b><span><strong>Choose an entry point</strong><code>figma-primitives · /react · /vite</code></span></div>
-            <div><b>03</b><span><strong>Keep domain behavior in your app</strong><small>Endpoints, schemas, and product rules remain explicit.</small></span></div>
+      <section class="workflow" id="how-it-works">
+        <div class="shell workflow-grid">
+          <div class="section-intro"><span class="kicker">02 / ONE SHARED LANGUAGE</span><h2>From canvas to UI,<br /><em>everything connects.</em></h2><p>Define your commands once. Keep state serializable. Let every task own its progress, cancellation, and outcome.</p></div>
+          <div class="flow-card">
+            <div class="flow-step"><span>01</span><i class="purple">◇</i><div><b>Figma canvas</b><small>Inspect layers and selection</small></div></div>
+            <div class="flow-line"><i></i></div>
+            <div class="flow-step"><span>02</span><i class="blue">↔</i><div><b>Typed protocol</b><small>Send safe request / response messages</small></div></div>
+            <div class="flow-line"><i></i></div>
+            <div class="flow-step"><span>03</span><i class="green">✓</i><div><b>Responsive UI</b><small>Subscribe to tasks, progress, and results</small></div></div>
           </div>
         </div>
+      </section>
+
+      <section class="quickstart shell" id="quickstart">
+        <span class="kicker">03 / QUICK START</span><h2>Ready in one command.</h2><p>Install the package, choose the entry points your plugin needs, and keep your product logic where it belongs: in your app.</p>
+        <div class="terminal">
+          <div class="terminal-bar"><span><i></i><i></i><i></i></span><b>Terminal</b><button type="button" data-copy="npm install figma-primitives">Copy</button></div>
+          <pre><code><span class="prompt">$</span> npm install figma-primitives
+
+<span class="muted">// Plugin runtime</span>
+<span class="pink">import</span> { createProtocol, createTaskEngine } <span class="pink">from</span> <span class="green">'figma-primitives'</span>
+
+<span class="muted">// Optional React UI</span>
+<span class="pink">import</span> { TaskProvider, useTasks } <span class="pink">from</span> <span class="green">'figma-primitives/react'</span></code></pre>
+        </div>
+      </section>
+
+      <section class="cta shell">
+        <div><span class="sparkle">✦</span><h2>Spend less time on plumbing.<br /><em>Build the plugin.</em></h2><p>Small pieces. Explicit boundaries. A better starting point.</p><div class="actions"><a class="button primary" href="https://github.com/hamedb89/figma-primitives" data-repo-link>Explore on GitHub <span>↗</span></a><a class="button light" href="#quickstart">Read the quick start</a></div></div>
+        <div class="cta-shapes" aria-hidden="true"><i></i><i></i><i></i></div>
       </section>
     </main>
 
-    <footer class="wrap">
-      <span>figma-primitives</span>
-      <span>Small pieces. Explicit boundaries.</span>
-      <a href="../LICENSE" data-repo-link="/blob/main/LICENSE">MIT License</a>
-    </footer>
-    <script src="./script.js"></script>
+    <footer class="shell"><a class="brand" href="#top"><span class="figma-mark"><i></i><i></i><i></i><i></i><i></i></span><span>figma-primitives</span></a><span>MIT licensed · Made for plugin builders.</span><div><a href="https://github.com/hamedb89/figma-primitives" data-repo-link>GitHub</a><a href="https://github.com/hamedb89/figma-primitives/blob/main/README.md" data-repo-link="/blob/main/README.md">Docs</a><a href="https://github.com/hamedb89/figma-primitives/blob/main/LICENSE" data-repo-link="/blob/main/LICENSE">License</a></div></footer>
+    <div class="toast" role="status" aria-live="polite">Copied to clipboard</div>
+    <script type="module" src="./script.js"></script>
   </body>
 </html>

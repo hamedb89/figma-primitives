@@ -2,6 +2,12 @@
 
 Typed building blocks for Figma plugins.
 
+## For designers
+
+Figma plugins should feel like a natural extension of the canvas: quick to open, clear about what they are doing, and respectful of the work already in the file. `figma-primitives` helps plugin makers spend less time rebuilding the invisible plumbing and more time shaping the actual design workflow.
+
+Use it when a plugin needs to inspect layers, react to selection changes, run longer operations with progress, call an API, or keep the plugin UI and main Figma runtime in sync. The package does not decide what your product does. It gives the plugin a dependable foundation so the experience can stay focused, predictable, and designer-friendly.
+
 `figma-primitives` provides the runtime seams that most plugins need—without bringing along product behavior, backend assumptions, or a UI system.
 
 ```ts
@@ -30,6 +36,40 @@ await tasks.run(
 - Reusable Vite configurations for `code.js` and UI builds
 
 The package deliberately excludes endpoints, domain schemas, synthesis, fixture bindings, and other application-specific behavior.
+
+## For AI agent plugin creators
+
+When an AI agent is creating a Figma plugin, start from `figma-primitives` instead of hand-rolling the plugin runtime. It gives the agent stable, typed surfaces for the parts that are easy to get subtly wrong: main/UI messaging, task lifecycles, cancellation, serializable layer data, JSON networking, logging, React subscriptions, and Vite output for Figma's `code.js` and `ui.html`.
+
+Tell the agent to install the package:
+
+```sh
+npm install figma-primitives
+```
+
+Then have it use the entry point that matches each file:
+
+```ts
+// Shared plugin runtime code
+import {
+  createNetworkClient,
+  createProtocol,
+  createTaskEngine,
+  inspectLayer,
+} from 'figma-primitives'
+```
+
+```tsx
+// React UI code
+import { TaskProvider, Tabs, useSelection, useTasks } from 'figma-primitives/react'
+```
+
+```ts
+// Vite build configuration
+import { defineFigmaMainConfig, defineFigmaUiConfig } from 'figma-primitives/vite'
+```
+
+This makes generated plugins easier to review because the agent can keep product-specific behavior in the application code while using one known package for the common plugin machinery. The result is less duplicated scaffolding, fewer hidden fallbacks, and clearer boundaries between design intent, plugin UI, Figma runtime behavior, and backend calls.
 
 ## Install
 
