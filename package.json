@@ -5,7 +5,7 @@
   "type": "module",
   "license": "MIT",
   "repository": { "type": "git", "url": "git+https://github.com/hamedb89/figma-primitives.git" },
-  "homepage": "https://github.com/hamedb89/figma-primitives#readme",
+  "homepage": "https://hamedb89.github.io/figma-primitives/",
   "bugs": { "url": "https://github.com/hamedb89/figma-primitives/issues" },
   "keywords": ["figma", "figma-plugin", "typescript", "vite", "react"],
   "engines": { "node": ">=18" },

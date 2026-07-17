@@ -16,9 +16,9 @@ Build reliable plugin runtimes, responsive React interfaces, and safe network bo
 </div>
 
 <p align="center">
-  <a href="https://hamedb89.github.io/figma-primitives/"><img src="./docs/assets/figma-primitives-overview.png" width="32%" alt="figma-primitives overview — build Figma plugins faster" /></a>
-  <a href="https://hamedb89.github.io/figma-primitives/#features"><img src="./docs/assets/figma-primitives-react.png" width="32%" alt="figma-primitives React bindings" /></a>
-  <a href="https://hamedb89.github.io/figma-primitives/#features"><img src="./docs/assets/figma-primitives-networking.png" width="32%" alt="figma-primitives threading and networking tools" /></a>
+  <a href="https://hamedb89.github.io/figma-primitives/"><img src="https://raw.githubusercontent.com/hamedb89/figma-primitives/main/docs/assets/figma-primitives-overview.png" width="32%" alt="figma-primitives overview — build Figma plugins faster" /></a>
+  <a href="https://hamedb89.github.io/figma-primitives/#features"><img src="https://raw.githubusercontent.com/hamedb89/figma-primitives/main/docs/assets/figma-primitives-react.png" width="32%" alt="figma-primitives React bindings" /></a>
+  <a href="https://hamedb89.github.io/figma-primitives/#features"><img src="https://raw.githubusercontent.com/hamedb89/figma-primitives/main/docs/assets/figma-primitives-networking.png" width="32%" alt="figma-primitives threading and networking tools" /></a>
 </p>
 
 > **See it in context:** Visit the [figma-primitives website](https://hamedb89.github.io/figma-primitives/) for an overview of the toolkit, its three entry points, and the quickest path to a working plugin.
