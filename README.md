@@ -1,6 +1,27 @@
+<div align="center">
+
 # figma-primitives
 
-Typed building blocks for Figma plugins.
+**Typed building blocks for Figma plugins.**
+
+Build reliable plugin runtimes, responsive React interfaces, and safe network boundaries without rebuilding the plumbing every time.
+
+[Website](https://hamedb89.github.io/figma-primitives/) · [Quick start](#install) · [Core primitives](#core-primitives) · [GitHub](https://github.com/hamedb89/figma-primitives)
+
+[![GitHub Pages](https://img.shields.io/github/actions/workflow/status/hamedb89/figma-primitives/pages.yml?style=flat-square&label=website&color=7047eb)](https://hamedb89.github.io/figma-primitives/)
+[![GitHub stars](https://img.shields.io/github/stars/hamedb89/figma-primitives?style=flat-square)](https://github.com/hamedb89/figma-primitives/stargazers)
+[![license](https://img.shields.io/github/license/hamedb89/figma-primitives?style=flat-square&color=0cad72)](./LICENSE)
+[![TypeScript](https://img.shields.io/badge/TypeScript-ready-1769ed?style=flat-square)](https://www.typescriptlang.org/)
+
+</div>
+
+<p align="center">
+  <a href="https://hamedb89.github.io/figma-primitives/"><img src="./docs/assets/figma-primitives-overview.png" width="32%" alt="figma-primitives overview — build Figma plugins faster" /></a>
+  <a href="https://hamedb89.github.io/figma-primitives/#features"><img src="./docs/assets/figma-primitives-react.png" width="32%" alt="figma-primitives React bindings" /></a>
+  <a href="https://hamedb89.github.io/figma-primitives/#features"><img src="./docs/assets/figma-primitives-networking.png" width="32%" alt="figma-primitives threading and networking tools" /></a>
+</p>
+
+> **See it in context:** Visit the [figma-primitives website](https://hamedb89.github.io/figma-primitives/) for an overview of the toolkit, its three entry points, and the quickest path to a working plugin.
 
 ## For designers
 
